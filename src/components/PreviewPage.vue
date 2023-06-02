@@ -216,21 +216,12 @@
 </template>
 
 <script>
-import { db } from "@/firebase/config";
-import { ref } from "vue";
+import getUser from "@/composables/getUser";
 
 export default {
   setup() {
-    let user = ref(null);
-    let id = "2iKYjQaNVhiLPn3iZoF9";
-
-    let load = async () => {
-      let res = await db.collection("users").doc(id).get();
-      user.value = { id: id, ...res.data() };
-    };
-
+    let { user, load } = getUser();
     load();
-
     return { user };
   },
 };
