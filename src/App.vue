@@ -1,8 +1,11 @@
 <template>
-  <div class="w-11/12 mx-auto">
-    <nav>
-      <router-link to="/">Home</router-link>
+  <div class="bg-slate-300">
+    <nav class="py-5 w-11/12 mx-auto">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/preview">General</router-link>
     </nav>
+  </div>
+  <div class="w-11/12 mx-auto">
     <router-view />
   </div>
 </template>

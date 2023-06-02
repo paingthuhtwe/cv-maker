@@ -1,9 +1,12 @@
-<template>
-  <h1 class="bg-slate-200 h-[100vh]">Paing Thu Htwe</h1>
-</template>
+<template></template>
 
 <script>
-export default {};
+import FormPage from "../components/FormPage";
+export default {
+  components: {
+    FormPage,
+  },
+};
 </script>
 
 <style>
