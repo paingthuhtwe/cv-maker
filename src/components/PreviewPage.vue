@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 w-[760px] mx-auto">
+  <div class="grid grid-cols-3 w-[760px] mx-auto" v-if="user">
     <div class="bg-slate-600 h-[1123px]">
       <img
         class="w-full px-8 py-10"
@@ -15,19 +15,19 @@
           contenteditable="true"
           class="text-white mt-3 text-sm font-medium hover:bg-slate-700"
         >
-          +959 780 909 574
+          {{ user.phone }}
         </p>
         <p
           contenteditable="true"
           class="text-white mt-2 text-sm font-medium hover:bg-slate-700"
         >
-          paingthuhtwe.official@gmail.com
+          {{ user.email }}
         </p>
         <p
           contenteditable="true"
           class="text-white mt-2 text-sm font-medium hover:bg-slate-700"
         >
-          Zayya Waddy St, Sanchaung Tsp, Yangon.
+          {{ user.address }}
         </p>
       </div>
       <!-- end contact section  -->
@@ -38,17 +38,11 @@
         <p
           contenteditable="true"
           class="text-white mt-3 text-sm font-medium hover:bg-slate-700 w-full"
+          v-for="education in user.educations"
+          :key="education"
         >
-          Finished High School (2019-2020)
+          {{ education }}
         </p>
-        <p
-          contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 w-full"
-        ></p>
-        <p
-          contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 w-full"
-        ></p>
       </div>
       <!-- end education section  -->
       <div class="p-3 mt-2">
@@ -58,17 +52,11 @@
         <p
           contenteditable="true"
           class="text-white mt-3 text-sm font-medium hover:bg-slate-700 w-full"
+          v-for="language in user.languages"
+          :key="language"
         >
-          English Intermediate Level
+          {{ language }}
         </p>
-        <p
-          contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 w-full"
-        ></p>
-        <p
-          contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 w-full"
-        ></p>
       </div>
       <!-- end language section  -->
       <div class="p-3 mt-2">
@@ -78,43 +66,11 @@
         <p
           contenteditable="true"
           class="text-white mt-3 text-sm font-medium hover:bg-slate-700 w-full"
+          v-for="skill in user.skills"
+          :key="skill"
         >
-          - HTML, CSS
+          - {{ skill }}
         </p>
-        <p
-          contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 w-full"
-        >
-          - Bootstrap, Tailwind
-        </p>
-        <p
-          contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 w-full"
-        >
-          - JavaScript, Vuejs
-        </p>
-        <p
-          contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 w-full"
-        >
-          - PHP, Laravel
-        </p>
-        <p
-          contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 w-full"
-        >
-          - MySQL, Firebase
-        </p>
-        <p
-          contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 w-full"
-        >
-          - API & Git
-        </p>
-        <p
-          contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 w-full"
-        ></p>
       </div>
       <!-- end skills section  -->
     </div>
@@ -129,70 +85,90 @@
         <div class="col-span-2"><p>Name</p></div>
         <div class="flex col-span-3">
           <p>: &nbsp;</p>
-          <p contenteditable="true" ref="name">Paing Thu Htwe</p>
+          <p contenteditable="true" class="hover:bg-slate-300">
+            {{ user.name }}
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-5 mt-3 font-medium">
         <div class="col-span-2"><p>Father's Name</p></div>
         <div class="flex col-span-3">
           <p>: &nbsp;</p>
-          <p contenteditable="true" ref="fatherName">U Yae Chan</p>
+          <p contenteditable="true" class="hover:bg-slate-300">
+            {{ user.fatherName }}
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-5 mt-3 font-medium">
         <div class="col-span-2"><p>Date of Birth</p></div>
         <div class="flex col-span-3">
           <p>: &nbsp;</p>
-          <p contenteditable="true" ref="dateOfBirth">06/07/2004</p>
+          <p contenteditable="true" class="hover:bg-slate-300">
+            {{ user.dateOfBirth }}
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-5 mt-3 font-medium">
         <div class="col-span-2"><p>Age</p></div>
         <div class="flex col-span-3">
           <p>: &nbsp;</p>
-          <p contenteditable="true" ref="age">19</p>
+          <p contenteditable="true" class="hover:bg-slate-300">
+            {{ user.age }}
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-5 mt-3 font-medium">
         <div class="col-span-2"><p>N.R.C No.</p></div>
         <div class="flex col-span-3">
           <p>: &nbsp;</p>
-          <p contenteditable="true" ref="nrcNo">8/YaSaKa(N)255979</p>
+          <p contenteditable="true" class="hover:bg-slate-300">
+            {{ user.nrcNo }}
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-5 mt-3 font-medium">
         <div class="col-span-2"><p>Nationality</p></div>
         <div class="flex col-span-3">
           <p>: &nbsp;</p>
-          <p contenteditable="true" ref="nationality">Myanmar</p>
+          <p contenteditable="true" class="hover:bg-slate-300">
+            {{ user.nationality }}
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-5 mt-3 font-medium">
         <div class="col-span-2"><p>Religion</p></div>
         <div class="flex col-span-3">
           <p>: &nbsp;</p>
-          <p contenteditable="true" ref="religion">Buddha</p>
+          <p contenteditable="true" class="hover:bg-slate-300">
+            {{ user.religion }}
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-5 mt-3 font-medium">
         <div class="col-span-2"><p>Marital Status</p></div>
         <div class="flex col-span-3">
           <p>: &nbsp;</p>
-          <p contenteditable="true" ref="maritalStatus">Single</p>
+          <p contenteditable="true" class="hover:bg-slate-300">
+            {{ user.maritalStatus }}
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-5 mt-3 font-medium">
         <div class="col-span-2"><p>Height</p></div>
         <div class="flex col-span-3">
           <p>: &nbsp;</p>
-          <p contenteditable="true" ref="height">5'6"</p>
+          <p contenteditable="true" class="hover:bg-slate-300">
+            {{ user.height }}
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-5 mt-3 font-medium">
         <div class="col-span-2"><p>Expected Salary</p></div>
         <div class="flex col-span-3">
           <p>: &nbsp;</p>
-          <p contenteditable="true" ref="expectedSalary">Negotiate</p>
+          <p contenteditable="true" class="hover:bg-slate-300">
+            {{ user.expectedSalary }}
+          </p>
         </div>
       </div>
       <!-- end profile section  -->
@@ -204,26 +180,14 @@
         </h2>
         <div class="flex mt-4">
           <p>&nbsp;&nbsp;~&nbsp;</p>
-          <p contenteditable="true" class="hover:bg-slate-300 w-full">
-            Documentation at ShweKabarLynn Electrical Engineering Co.,Ltd
-            (Nov/2020 - Feb/2021)
+          <p
+            contenteditable="true"
+            class="hover:bg-slate-300 w-full"
+            v-for="experience in user.experiences"
+            :key="experience"
+          >
+            {{ experience }}
           </p>
-        </div>
-        <div class="flex mt-2">
-          <p>&nbsp;&nbsp;~&nbsp;</p>
-          <p contenteditable="true" class="hover:bg-slate-300 w-full"></p>
-        </div>
-        <div class="flex mt-2">
-          <p>&nbsp;&nbsp;~&nbsp;</p>
-          <p contenteditable="true" class="hover:bg-slate-300 w-full"></p>
-        </div>
-        <div class="flex mt-2">
-          <p>&nbsp;&nbsp;~&nbsp;</p>
-          <p contenteditable="true" class="hover:bg-slate-300 w-full"></p>
-        </div>
-        <div class="flex mt-2">
-          <p>&nbsp;&nbsp;~&nbsp;</p>
-          <p contenteditable="true" class="hover:bg-slate-300 w-full"></p>
         </div>
       </div>
       <!-- end experience section -->
@@ -234,53 +198,15 @@
           OTHER CERTIFICATE
         </h2>
         <div class="mt-3">
-          <div class="flex mt-4">
+          <div
+            class="flex mt-4"
+            v-for="qualification in user.qualifications"
+            :key="qualification"
+          >
             <p>&nbsp;&nbsp;~&nbsp;</p>
             <p contenteditable="true" class="hover:bg-slate-300 w-full">
-              Certificate in Professional Web Developer
+              {{ qualification }}
             </p>
-          </div>
-          <div class="flex mt-2">
-            <p>&nbsp;&nbsp;~&nbsp;</p>
-            <p contenteditable="true" class="hover:bg-slate-300 w-full">
-              Certificate in Vuejs + Firebase Course
-            </p>
-          </div>
-          <div class="flex mt-2">
-            <p>&nbsp;&nbsp;~&nbsp;</p>
-            <p contenteditable="true" class="hover:bg-slate-300 w-full">
-              Certificate in Programming Basic
-            </p>
-          </div>
-          <div class="flex mt-2">
-            <p>&nbsp;&nbsp;~&nbsp;</p>
-            <p contenteditable="true" class="hover:bg-slate-300 w-full">
-              Certificate in Computer Basic
-            </p>
-          </div>
-          <div class="flex mt-2">
-            <p>&nbsp;&nbsp;~&nbsp;</p>
-            <p contenteditable="true" class="hover:bg-slate-300 w-full"></p>
-          </div>
-          <div class="flex mt-2">
-            <p>&nbsp;&nbsp;~&nbsp;</p>
-            <p contenteditable="true" class="hover:bg-slate-300 w-full"></p>
-          </div>
-          <div class="flex mt-2">
-            <p>&nbsp;&nbsp;~&nbsp;</p>
-            <p contenteditable="true" class="hover:bg-slate-300 w-full"></p>
-          </div>
-          <div class="flex mt-2">
-            <p>&nbsp;&nbsp;~&nbsp;</p>
-            <p contenteditable="true" class="hover:bg-slate-300 w-full"></p>
-          </div>
-          <div class="flex mt-2">
-            <p>&nbsp;&nbsp;~&nbsp;</p>
-            <p contenteditable="true" class="hover:bg-slate-300 w-full"></p>
-          </div>
-          <div class="flex mt-2">
-            <p>&nbsp;&nbsp;~&nbsp;</p>
-            <p contenteditable="true" class="hover:bg-slate-300 w-full"></p>
           </div>
         </div>
       </div>
@@ -290,33 +216,22 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
+import { db } from "@/firebase/config";
+import { ref } from "vue";
 
 export default {
   setup() {
-    var name = ref();
-    var fatherName = ref();
-    var dateOfBirth = ref();
-    var age = ref();
-    var nrcNo = ref();
-    var nationality = ref();
-    var religion = ref();
-    var maritalStatus = ref();
-    var height = ref();
-    var expectedSalary = ref();
+    let user = ref(null);
+    let id = "2iKYjQaNVhiLPn3iZoF9";
 
-    return {
-      name,
-      fatherName,
-      dateOfBirth,
-      age,
-      nrcNo,
-      nationality,
-      religion,
-      maritalStatus,
-      height,
-      expectedSalary,
+    let load = async () => {
+      let res = await db.collection("users").doc(id).get();
+      user.value = { id: id, ...res.data() };
     };
+
+    load();
+
+    return { user };
   },
 };
 </script>

@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <FormPage></FormPage>
+</template>
 
 <script>
 import FormPage from "../components/FormPage";

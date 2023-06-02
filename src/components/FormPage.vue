@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full">
-    <form class="bg-white shadow-md rounded p-4 mb-4">
+  <div class="w-1/2 mx-auto mt-3">
+    <form class="bg-white shadow-md rounded border p-4 mb-4">
       <h1 class="text-xl font-semibold mb-2">PROFILE</h1>
       <div class="grid gird-cols-1 lg:grid-cols-2 gap-3">
         <div class="mb-4">
@@ -84,7 +84,7 @@
       </div>
     </form>
     <p class="text-center text-gray-500 text-xs">
-      &copy;2020 Acme Corp. All rights reserved.
+      &copy;2022 CV MAKER. All rights reserved.
     </p>
   </div>
 </template>
