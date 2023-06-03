@@ -82,6 +82,124 @@
           />
         </div>
       </div>
+      <h1 class="text-xl font-semibold mb-2">CONTACT</h1>
+      <div class="grid gird-cols-1 lg:grid-cols-2 gap-3">
+        <div class="mb-4">
+          <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+            type="text"
+            placeholder="Phone No."
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+            type="text"
+            placeholder="Email"
+          />
+        </div>
+      </div>
+      <div class="grid gird-cols-1 lg:grid-cols-2 gap-3">
+        <div class="mb-4">
+          <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+            type="text"
+            placeholder="Address"
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            class="bg-blue-400 w-full py-[7px] px-3 rounded-md cursor-pointer hover:bg-blue-500"
+            type="submit"
+            value="+ Add Item"
+          />
+        </div>
+      </div>
+      <h1 class="text-xl font-semibold mb-2">EDUCATION</h1>
+      <div class="grid gird-cols-1 lg:grid-cols-2 gap-3">
+        <div class="mb-4">
+          <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+            type="text"
+            placeholder="Address"
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            class="bg-blue-400 w-full py-[7px] px-3 rounded-md cursor-pointer hover:bg-blue-500"
+            type="submit"
+            value="+ Add Item"
+          />
+        </div>
+      </div>
+      <h1 class="text-xl font-semibold mb-2">SKILLS</h1>
+      <div class="grid gird-cols-1 lg:grid-cols-2 gap-3">
+        <div class="mb-4">
+          <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+            type="text"
+            placeholder="Address"
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            class="bg-blue-400 w-full py-[7px] px-3 rounded-md cursor-pointer hover:bg-blue-500"
+            type="submit"
+            value="+ Add Item"
+          />
+        </div>
+      </div>
+      <h1 class="text-xl font-semibold mb-2">QUALIFICATIONS</h1>
+      <div class="grid gird-cols-1 lg:grid-cols-2 gap-3">
+        <div class="mb-4">
+          <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+            type="text"
+            placeholder="Address"
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            class="bg-blue-400 w-full py-[7px] px-3 rounded-md cursor-pointer hover:bg-blue-500"
+            type="submit"
+            value="+ Add Item"
+          />
+        </div>
+      </div>
+      <h1 class="text-xl font-semibold mb-2">LANGUAGES</h1>
+      <div class="grid gird-cols-1 lg:grid-cols-2 gap-3">
+        <div class="mb-4">
+          <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+            type="text"
+            placeholder="Address"
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            class="bg-blue-400 w-full py-[7px] px-3 rounded-md cursor-pointer hover:bg-blue-500"
+            type="submit"
+            value="+ Add Item"
+          />
+        </div>
+      </div>
+      <h1 class="text-xl font-semibold mb-2">WORK EXPERIENCES</h1>
+      <div class="grid gird-cols-1 lg:grid-cols-2 gap-3">
+        <div class="mb-4">
+          <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+            type="text"
+            placeholder="Address"
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            class="bg-blue-400 w-full py-[7px] px-3 rounded-md cursor-pointer hover:bg-blue-500"
+            type="submit"
+            value="+ Add Item"
+          />
+        </div>
+      </div>
     </form>
     <p class="text-center text-gray-500 text-xs">
       &copy;2022 CV MAKER. All rights reserved.

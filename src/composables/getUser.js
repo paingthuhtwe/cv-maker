@@ -10,7 +10,9 @@ let getUser = () => {
     user.value = { id: id, ...res.data() };
   };
 
-  return { user, load };
+  load();
+
+  return { user };
 };
 
 export default getUser;

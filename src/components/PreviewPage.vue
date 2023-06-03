@@ -3,8 +3,8 @@
     <div class="bg-slate-600 h-[1123px]">
       <img
         class="w-full px-8 py-10"
-        src="@/assets/images/CV_03.jpg"
-        alt="Profile Image"
+        :src="img_url"
+        :alt="loadImg(user.image)"
       />
       <div class="bg-sky-500 h-10 w-full"></div>
       <div class="p-3 mt-3">
@@ -13,20 +13,35 @@
         </h2>
         <p
           contenteditable="true"
-          class="text-white mt-3 text-sm font-medium hover:bg-slate-700"
+          class="text-white mt-3 text-sm font-medium hover:bg-slate-700 flex items-center"
         >
+          <img
+            src="@/assets/icons/phone-solid.svg"
+            class="w-4 mr-2 invert"
+            alt=""
+          />
           {{ user.phone }}
         </p>
         <p
           contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700"
+          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 flex items-center"
         >
+          <img
+            src="@/assets/icons/envelope-solid.svg"
+            class="w-4 mr-2 invert"
+            alt=""
+          />
           {{ user.email }}
         </p>
         <p
           contenteditable="true"
-          class="text-white mt-2 text-sm font-medium hover:bg-slate-700"
+          class="text-white mt-2 text-sm font-medium hover:bg-slate-700 flex items-start"
         >
+          <img
+            src="@/assets/icons/location-dot-solid.svg"
+            class="w-4 mr-2 invert"
+            alt=""
+          />
           {{ user.address }}
         </p>
       </div>
@@ -217,12 +232,21 @@
 
 <script>
 import getUser from "@/composables/getUser";
+import { storage } from "@/firebase/config";
+import { ref as storageReference, getDownloadURL } from "firebase/storage";
+import { ref } from "vue";
 
 export default {
   setup() {
-    let { user, load } = getUser();
-    load();
-    return { user };
+    let { user } = getUser();
+    let img_url = ref(null);
+
+    let loadImg = (image) => {
+      const storageRef = storageReference(storage, `profile/${image}`);
+      let url = getDownloadURL(storageRef).then((url) => (img_url.value = url));
+    };
+
+    return { user, loadImg, img_url };
   },
 };
 </script>
